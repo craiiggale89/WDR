@@ -15,12 +15,16 @@ const templates = [
         description: 'A calm, professional website for therapists and counsellors.',
         category: 'Therapist' as const,
         href: '/templates/therapist-website-template',
+        imageSrc: '/images/templates/therapist-hero.png',
+        imageAlt: 'Therapist website template preview',
     },
     {
         title: 'Coach Website',
         description: 'A confident website for coaches who want to reach more clients.',
         category: 'Coach' as const,
         href: '/templates/coach-website-template',
+        imageSrc: '/images/templates/coach-hero.png',
+        imageAlt: 'Coach website template preview',
     },
 ];
 
