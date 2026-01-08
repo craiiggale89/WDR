@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { db } from '@/db';
+import { leads } from '@/db/schema';
 
 interface ContactFormData {
     name: string;
@@ -30,14 +32,32 @@ export async function POST(request: Request) {
         }
 
         // Log the submission (in production, this would send an email)
-        console.log('Contact form submission:', {
+        // Log the submission (in production, this would send an email)
+        const logData = {
             name: data.name,
             email: data.email,
             phone: data.phone || 'Not provided',
             service: data.service || 'Not specified',
             message: data.message,
             timestamp: new Date().toISOString(),
-        });
+        };
+        console.log('Contact form submission:', logData);
+
+        // Save to Database
+        try {
+            await db.insert(leads).values({
+                name: data.name,
+                email: data.email,
+                phone: data.phone,
+                service: data.service,
+                message: data.message,
+            });
+            console.log('Lead saved to database successfully');
+        } catch (dbError) {
+            console.error('Failed to save lead to database:', dbError);
+            // We still return success to the user so they don't think it failed,
+            // but we log the error for investigation.
+        }
 
         // In production, you would send an email here using a service like:
         // - Resend
