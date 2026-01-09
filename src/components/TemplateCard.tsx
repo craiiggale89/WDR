@@ -4,7 +4,7 @@ import Link from 'next/link';
 interface TemplateCardProps {
     title: string;
     description: string;
-    category: 'Trade' | 'Coach' | 'Therapist';
+    category: 'Trade' | 'Coach' | 'Therapist' | 'Cafe';
     href: string;
     imageSrc: string;
     imageAlt: string;
@@ -14,19 +14,24 @@ const categoryColors = {
     Trade: 'bg-slate-100 text-slate-600',
     Coach: 'bg-slate-100 text-slate-600',
     Therapist: 'bg-slate-100 text-slate-600',
+    Cafe: 'bg-amber-100 text-amber-700',
 };
 
 export default function TemplateCard({ title, description, category, href, imageSrc, imageAlt }: TemplateCardProps) {
     return (
         <div className="card-elevated group">
             {/* Image area */}
-            <div className="relative aspect-[16/10] bg-slate-100 rounded-lg mb-5 overflow-hidden">
-                <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                />
+            <div className="relative aspect-[16/10] bg-slate-100 rounded-lg mb-5 overflow-hidden flex items-center justify-center">
+                {imageSrc ? (
+                    <Image
+                        src={imageSrc}
+                        alt={imageAlt}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                ) : (
+                    <span className="text-slate-400 text-sm">Preview coming soon</span>
+                )}
             </div>
 
             {/* Category badge - neutral styling */}

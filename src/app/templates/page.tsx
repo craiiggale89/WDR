@@ -45,9 +45,17 @@ const templates = [
         imageSrc: '/images/templates/coach-hero.png',
         imageAlt: 'Coach website template preview',
     },
+    {
+        title: 'Café Website',
+        description: 'A simple, practical website for independent cafés and restaurants. Menu, hours, location and booking.',
+        category: 'Cafe' as const,
+        href: '/templates/cafe-website-template',
+        imageSrc: '/images/templates/cafe-hero.png',
+        imageAlt: 'Café website template preview',
+    },
 ];
 
-const categories = ['All', 'Trade', 'Coach', 'Therapist'] as const;
+const categories = ['All', 'Trade', 'Coach', 'Therapist', 'Cafe'] as const;
 
 export default function TemplatesPage() {
     const [activeCategory, setActiveCategory] = useState<string>('All');

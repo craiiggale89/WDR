@@ -26,7 +26,7 @@ export default function Header() {
               alt="Websites Done Right"
               width={240}
               height={80}
-              className="h-20 w-auto"
+              className="h-24 w-auto"
               priority
             />
           </Link>

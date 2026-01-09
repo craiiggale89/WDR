@@ -36,7 +36,7 @@ const trustSignals = [
   },
   {
     title: 'Built for local businesses',
-    description: 'Designed for trades, coaches and therapists in Birmingham and the West Midlands.',
+    description: 'Designed for service businesses in Birmingham and the West Midlands.',
   },
   {
     title: 'No jargon',
@@ -76,7 +76,7 @@ export default function Home() {
               Focused on clarity, structure, and results
             </p>
             <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-xl leading-relaxed font-light">
-              We build simple, professional websites for Birmingham and West Midlands trades, coaches and therapists, and we handle everything for you.
+              We build simple, professional websites for independent service businesses in Birmingham and the West Midlands. From trades and therapists to other local services, we handle everything for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <Link href="/templates" className="btn btn-primary px-8 py-4 text-base !text-white">
@@ -195,7 +195,7 @@ export default function Home() {
           <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="mb-5">Example templates</h2>
             <p className="text-lg text-slate-500 leading-relaxed">
-              Have a look at some of our website templates. We can customise any of these for your business.
+              These are proven layouts that work for service businesses. We use these structures because they generate enquiries, not just because they look good.
             </p>
           </div>
 
